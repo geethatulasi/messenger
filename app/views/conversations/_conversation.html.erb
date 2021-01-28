@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-body">
+    <div class="media-heading">
+      <%= conversation.originator.name %><br/>
+      <small>Subject<%= conversation.subject %></small>
+      <small>Date<%= conversation.messages.last.created_at.strftime("%A, %b %d,%Y at %I:%M%p") %></small>
+    </div>
+    <%= truncate conversation.messages.last.body, length:145 %>
+    <%= link_to "View",conversation_path(conversation) %>
+  </div>
+</div>
